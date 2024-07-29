@@ -6,129 +6,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         @import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
-        :root {
-            --color-back: #fff7b7;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: "Poppins", sans-serif;
-            letter-spacing: -0.2px;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #333;
-        }
+:root {
+  --color-back: #fff7b7;
+}
+* {
+  margin: 0;
 
-        body {
-            background-color: var(--color-back);
-            overflow-x: hidden;
-            background-size: cover;
-            width: 100vw;
-            height: 100%;
-            display: grid;
-            align-items: center;
-            justify-items: center;
-        }
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.2px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
 
-        .contact-us {
-            background: #f8f4e5;
-            padding: 50px 100px;
-            border: 2px solid black;
-            box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
+body {
+  background-color: var(--color-back);
+  overflow-x: hidden;
+  background-size: cover;
 
-        :root {
-            --ruler: 16px;
-            --color-red: #ae1100;
-            --color-bg: white;
-            --color-shadow: #babecc;
-            --color-white: #fff;
-        }
 
-        body,
-        p,
-        input,
-        select,
-        textarea,
-        button {
-            font-family: "Poppins", sans-serif;
-            letter-spacing: -0.2px;
-            font-size: var(--ruler);
-        }
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
 
-        div,
-        p {
-            color: var(--color-black);
-            text-shadow: 1px 1px 1px var(--color-white);
-        }
+.contact-us {
+  background: #f8f4e5;
+  padding: 50px 100px;
+  border: 2px solid black;
+  box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
-        form {
-            padding: var(--ruler);
-            width: calc(var(--ruler) * 20);
-            margin: 0 auto;
-        }
+:root {
+  --ruler: 16px;
+  --color-red: #ae1100;
+  --color-bg: white;
+  --color-shadow: #babecc;
+  --color-white: #fff;
+}
 
-        input {
-            border: 0;
-            outline: 0;
-            font-size: var(--ruler);
-            border-radius: calc(var(--ruler) * 20);
-            padding: var(--ruler);
-            background-color: var(--color-bg);
-            text-shadow: 1px 1px 0 var(--color-white);
-        }
 
-        label {
-            display: block;
-            margin-bottom: calc(var(--ruler) * 1.5);
-            width: 100%;
-        }
 
-        input,
-        textarea {
-            margin-right: calc(var(--ruler) / 2);
-            box-shadow: inset 2px 2px 5px var(--color-shadow),
-            inset -5px -5px 10px var(--color-white);
-            width: 100%;
-            box-sizing: border-box;
-            transition: all 0.2s ease-in-out;
-            appearance: none;
-            -webkit-appearance: none;
-        }
+body,
+p,
+input,
+select,
+textarea,
+button {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.2px;
+  font-size: var(--ruler);
+}
 
-        input:focus {
-            box-shadow: inset 1px 1px 2px var(--color-shadow),
-            inset -1px -1px 2px var(--color-white);
-        }
+div,
+p {
+  color: var(--color-black);
+  text-shadow: 1px 1px 1px var(--color-white);
+}
 
-        .label {
-            font-size: 1.5rem;
-        }
+form {
+  padding: var(--ruler);
+  width: calc(var(--ruler) * 20);
+  margin: 0 auto;
+}
 
-        button {
-            display: block;
-            margin: 0 auto;
-            line-height: 28pt;
-            padding: 0 20px;
-            background: #ffa580;
-            letter-spacing: 2px;
-            transition: 0.2s all ease-in-out;
-            outline: none;
-            border: 1px solid black;
-            box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px black;
-        }
+input {
+  border: 0;
+  outline: 0;
+  font-size: var(--ruler);
+  border-radius: calc(var(--ruler) * 20);
+  padding: var(--ruler);
+  background-color: var(--color-bg);
+  text-shadow: 1px 1px 0 var(--color-white);
+}
 
-        button:hover {
-            background: black;
-            color: white;
-            border: 1px solid black;
-        }
+label {
+  display: block;
+  margin-bottom: calc(var(--ruler) * 1.5);
+  width: 100%;
+}
 
-        input[type="file"] {
-            margin-bottom: 20px;
-        }
+input,
+textarea {
+  margin-right: calc(var(--ruler) / 2);
+  box-shadow: inset 2px 2px 5px var(--color-shadow),
+    inset -5px -5px 10px var(--color-white);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input:focus {
+  box-shadow: inset 1px 1px 2px var(--color-shadow),
+    inset -1px -1px 2px var(--color-white);
+}
+
+.label{
+  font-size: 1.5rem;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  line-height: 28pt;
+  padding: 0 20px;
+  background: #ffa580;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  outline: none;
+  border: 1px solid black;
+  box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px black;
+}
+
+button:hover {
+  background: black;
+  color: white;
+  border: 1px solid black;
+}
+
+input[type="file"] {
+  margin-bottom: 20px;
+}
+
     </style>
 </head>
 
@@ -136,32 +142,31 @@
     <div id="form-container" class="contact-us">
         <h2>INPUT DATA KE SPREAD SHEET</h2>
         <!-- akses link script app -->
-        <form action="https://script.google.com/macros/s/AKfycbwA2E6dfQDJFKXOmckqUjZQXoZ1nfPLz5vdsC8VRpsCUKsNoaOOMTPnnO2j0w9Z4n_Y/exec"
+        <form
+            action="https://script.google.com/macros/s/AKfycbwA2E6dfQDJFKXOmckqUjZQXoZ1nfPLz5vdsC8VRpsCUKsNoaOOMTPnnO2j0w9Z4n_Y/exec"
             method="post" enctype="multipart/form-data">
             <!-- end akses  -->
             <label for="no" class="label">Nomor</label>
-            <input type="number" id="no" name="no" required></br></br>
-            <label for="nama" class="label">Nama Kegiatan:</label>
-            <input type="text" id="nama" name="nama" required>
-            <label for="jenis" class="label">Pilih Jenis Kegiatan:</label>
-            <select name="jenis" id="jenis" required>
-                <option></option>
-                <option value="kbm">KBM </option>
-                <option value="nonkbm">Non KBM</option>
-            </select>
-            <br>
+            <input type="number" id="no" name="no" required>
+            </br></br>
+
             <br>
             <label for="tgl_kgt" class="label">Tanggal kegiatan:</label>
             <input type="date" id="tgl_kgt" name="tgl_kgt" required>
             <br>
+
             <label for="uraian" class="label">Uraian Kegiatan:</label>
             </br>
-            <textarea cols="60" rows="10" type="text" id="uraian" name="uraian" required></textarea></br></br>
-            <label for="target" class="label">Target Capaian:</label>
-            <textarea cols="60" rows="10" type="text" id="target" name="target" required></textarea></br></br>
+            <textarea cols="60" rows="10" type="text" id="uraian" name="uraian" required></textarea></br>
+
+            </br>
+
             <label for="buktis" class="label">Bukti Kegiatan:</label>
+            <!-- This is an input element of type file, which allows the user to select an image -->
             <input type="file" name="buktis" id="buktis" accept="image/*">
+
             <input type="hidden" id="buktisEnc" name="buktisEnc">
+            <!-- This is an image element with an empty src and alt attribute -->
             <script>
                 document.getElementById('buktis').addEventListener('change', function (event) {
                     var file = event.target.files[0];
@@ -172,9 +177,8 @@
                     reader.readAsDataURL(file);
                 });
             </script>
-            <button type="submit">Simpan Data</button>
+            <button value="Simpan Data">Simpan Data</button>
         </form>
+          
     </div>
 </body>
-
-</html>

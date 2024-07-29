@@ -129,7 +129,7 @@
 <body>
     <div id="form-container" class="contact-us">
         <h2>INPUT DATA KE SPREAD SHEET</h2>
-        <form id="myForm" onsubmit="handleFormSubmit()" action="https://script.google.com/macros/s/AKfycbySrRT2wvKlwjZYn6AjfRFohppL0SqhnAI73ZYrkrDC8-GAAGCisOemI5LhU0tLdKvg/exec" method="post" enctype="multipart/form-data">
+        <form action="https://script.google.com/macros/s/AKfycbzoUeJhYC6zP7rYlD5piMdHKmTZkdMet9XKuuVezSte_KnY8is7u43fe7oapK-ZCM3I/exec" method="post" enctype="multipart/form-data">
             <label for="no" class="label">Nomor:</label>
             <input type="number" id="no" name="no" required>
             
@@ -140,47 +140,19 @@
             <textarea cols="60" rows="10" type="text" id="uraian" name="uraian" required></textarea>
             
             <label for="buktis" class="label">Bukti Kegiatan:</label>
-            <input type="file" name="buktis" id="buktis" >
-            <button value="submit">Simpan Data</button>
+            <input type="file" name="buktis" id="buktis" accept="image/*">
+            <input type="hidden" id="buktisEnc" name="buktisEnc">
             <script>
-                function preventFormSubmit() {
-                        var forms = document.querySelectorAll('form');
-                        for (var i = 0; i < forms.length; i++) {
-                            forms[i].addEventListener('submit', function (event) {
-                                event.preventDefault();
-                            });
-                        }
+                document.getElementById('buktis').addEventListener('change', function (event) {
+                    var file = event.target.files[0];
+                    var reader = new FileReader();
+                    reader.onloadend = function () {
+                        document.getElementById('buktisEnc').value = reader.result.split(',')[1];
                     }
-                    window.addEventListener('load', preventFormSubmit);
-                    function handleFormSubmit() {
-                        var formdata = $('#myForm').serializeArray()
-                        formdata.push({
-                          name: 'myfile',
-                          value: myfile
-                        })
-                        google.script.run.withSuccessHandler(success).processForm(formdata);
-                    }
-                    function success(){
-                         document.getElementById("myForm").reset()
-                         Swal.fire({
-                          position: 'center',
-                          icon: 'success',
-                          title: 'data submited!',
-                          showConfirmButton: false,
-                          timer: 1500
-                        })
-                    }
-                var myfile ={},file, reader = new FileReader();
-              reader.onloadend = function(e) {
-                  myfile.data = e.target.result
-                  myfile.name = file.name
-                  console.log(myfile)
-              };
-             $('#Buktis').change(function(){
-               file = $('#Buktis')[0].files[0]
-                reader.readAsDataURL(file);
-             })
+                    reader.readAsDataURL(file);
+                });
             </script>
+            <button value="Simpan Data">Simpan Data</button>
         </form>
     </div>
 </body>

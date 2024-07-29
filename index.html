@@ -146,7 +146,7 @@ input[type="file"] {
             action="https://script.google.com/macros/s/AKfycbxeOTSCe6Xd_oLAl6XjL5V2SMa96bzxH8tU_8tjRN3DLWpzOqHWb1jwyhOc3kFG2cUg/exec"
             method="post" enctype="multipart/form-data">
             <!-- end akses  -->
-            <label for="no" class="label">Nomor</label>
+            <label for="no" class="label">Nomor:</label>
             <input type="number" id="no" name="no" required>
             </br></br>
 
@@ -156,17 +156,14 @@ input[type="file"] {
             <br>
 
             <label for="uraian" class="label">Uraian Kegiatan:</label>
-            </br>
             <textarea cols="60" rows="10" type="text" id="uraian" name="uraian" required></textarea></br>
 
             </br>
 
             <label for="buktis" class="label">Bukti Kegiatan:</label>
-            <!-- This is an input element of type file, which allows the user to select an image -->
             <input type="file" name="buktis" id="buktis" accept="image/*">
 
             <input type="hidden" id="buktisEnc" name="buktisEnc">
-            <!-- This is an image element with an empty src and alt attribute -->
             <script>
                 document.getElementById('buktis').addEventListener('change', function (event) {
                     var file = event.target.files[0];

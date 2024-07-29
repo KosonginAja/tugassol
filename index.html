@@ -3,168 +3,142 @@
 
 <head>
     <title>Racap Kegiatan Guru</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         @import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
-:root {
-  --color-back: #fff7b7;
-}
-* {
-  margin: 0;
+        :root {
+            --color-back: #fff7b7;
+            --ruler: 16px;
+            --color-red: #ae1100;
+            --color-bg: white;
+            --color-shadow: #babecc;
+            --color-white: #fff;
+            --color-black: #333;
+        }
 
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: -0.2px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            letter-spacing: -0.2px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--color-black);
+        }
 
-body {
-  background-color: var(--color-back);
-  overflow-x: hidden;
-  background-size: cover;
+        body {
+            background-color: var(--color-back);
+            overflow-x: hidden;
+            background-size: cover;
+            width: 100vw;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
+        .contact-us {
+            background: #f8f4e5;
+            padding: 20px;
+            border: 2px solid black;
+            box-shadow: 5px 5px 1px #ffa580, 5px 5px 1px 2px black;
+            margin: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
 
-  width: 100vw;
-  height: 100%;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
+        form {
+            padding: var(--ruler);
+            margin: 0 auto;
+        }
 
-.contact-us {
-  background: #f8f4e5;
-  padding: 50px 100px;
-  border: 2px solid black;
-  box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+        input, textarea, button {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 0;
+            outline: 0;
+            border-radius: 5px;
+            font-size: var(--ruler);
+            background-color: var(--color-bg);
+            box-shadow: inset 2px 2px 5px var(--color-shadow), inset -5px -5px 10px var(--color-white);
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+            appearance: none;
+            -webkit-appearance: none;
+        }
 
-:root {
-  --ruler: 16px;
-  --color-red: #ae1100;
-  --color-bg: white;
-  --color-shadow: #babecc;
-  --color-white: #fff;
-}
+        input:focus, textarea:focus {
+            box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
+        }
 
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
 
+        button {
+            display: block;
+            line-height: 28pt;
+            padding: 10px 20px;
+            background: #ffa580;
+            letter-spacing: 2px;
+            transition: 0.2s all ease-in-out;
+            outline: none;
+            border: 1px solid black;
+            box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px black;
+        }
 
-body,
-p,
-input,
-select,
-textarea,
-button {
-  font-family: "Poppins", sans-serif;
-  letter-spacing: -0.2px;
-  font-size: var(--ruler);
-}
+        button:hover {
+            background: black;
+            color: white;
+            border: 1px solid black;
+        }
 
-div,
-p {
-  color: var(--color-black);
-  text-shadow: 1px 1px 1px var(--color-white);
-}
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
 
-form {
-  padding: var(--ruler);
-  width: calc(var(--ruler) * 20);
-  margin: 0 auto;
-}
+        @media (max-width: 600px) {
+            .contact-us {
+                padding: 20px;
+                box-shadow: 3px 3px 1px #ffa580, 3px 3px 1px 2px black;
+            }
 
-input {
-  border: 0;
-  outline: 0;
-  font-size: var(--ruler);
-  border-radius: calc(var(--ruler) * 20);
-  padding: var(--ruler);
-  background-color: var(--color-bg);
-  text-shadow: 1px 1px 0 var(--color-white);
-}
+            form {
+                padding: 10px;
+            }
 
-label {
-  display: block;
-  margin-bottom: calc(var(--ruler) * 0.8);
-  width: 100%;
-}
+            input, textarea, button {
+                font-size: 14px;
+                padding: 8px;
+            }
 
-input,
-textarea {
-  margin-right: calc(var(--ruler) / 2);
-  box-shadow: inset 2px 2px 5px var(--color-shadow),
-    inset -5px -5px 10px var(--color-white);
-  width: 100%;
-  box-sizing: border-box;
-  transition: all 0.2s ease-in-out;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-input:focus {
-  box-shadow: inset 1px 1px 2px var(--color-shadow),
-    inset -1px -1px 2px var(--color-white);
-}
-
-.label{
-  font-size: 1.5rem;
-}
-
-button {
-  display: block;
-  margin: 0 auto;
-  line-height: 28pt;
-  padding: 0 20px;
-  background: #ffa580;
-  letter-spacing: 2px;
-  transition: 0.2s all ease-in-out;
-  outline: none;
-  border: 1px solid black;
-  box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px black;
-}
-
-button:hover {
-  background: black;
-  color: white;
-  border: 1px solid black;
-}
-
-input[type="file"] {
-  margin-bottom: 20px;
-}
-
+            label {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div id="form-container" class="contact-us">
         <h2>INPUT DATA KE SPREAD SHEET</h2>
-        <!-- akses link script app -->
-        <form
-            action="https://script.google.com/macros/s/AKfycbxeOTSCe6Xd_oLAl6XjL5V2SMa96bzxH8tU_8tjRN3DLWpzOqHWb1jwyhOc3kFG2cUg/exec"
-            method="post" enctype="multipart/form-data">
-            <!-- end akses  -->
+        <form action="https://script.google.com/macros/s/AKfycbxeOTSCe6Xd_oLAl6XjL5V2SMa96bzxH8tU_8tjRN3DLWpzOqHWb1jwyhOc3kFG2cUg/exec" method="post" enctype="multipart/form-data">
             <label for="no" class="label">Nomor:</label>
             <input type="number" id="no" name="no" required>
-            </br>
-
-            <br>
+            
             <label for="tgl_kgt" class="label">Tanggal kegiatan:</label>
             <input type="date" id="tgl_kgt" name="tgl_kgt" required>
-            </br>
-
-            <br>
+            
             <label for="uraian" class="label">Uraian Kegiatan:</label>
-            <textarea cols="60" rows="10" type="text" id="uraian" name="uraian" required></textarea></br>
-            </br>
-
-            <br>
+            <textarea cols="60" rows="10" type="text" id="uraian" name="uraian" required></textarea>
+            
             <label for="buktis" class="label">Bukti Kegiatan:</label>
             <input type="file" name="buktis" id="buktis" accept="image/*">
-
             <input type="hidden" id="buktisEnc" name="buktisEnc">
             <script>
                 document.getElementById('buktis').addEventListener('change', function (event) {
@@ -178,6 +152,7 @@ input[type="file"] {
             </script>
             <button value="Simpan Data">Simpan Data</button>
         </form>
-          
     </div>
 </body>
+
+</html>

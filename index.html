@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Log harian</title>
+    <title>Log Harian</title>
     <link href="favicon.ICO" rel="icon">
     <link href="apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -145,7 +145,7 @@
 <body>
     <div id="form-container" class="contact-us">
         <h2>INPUT DATA KE SPREADSHEET</h2>
-        <form action="https://script.google.com/macros/s/AKfycbz02dVFfElCpw1LctgDIuQXxfi9qMyvc14d453ynhHDlLtIz0yPWfJOFgS9t6joECsy/exec"id="myForm" onsubmit="handleFormSubmit(event)">
+        <form id="myForm" onsubmit="handleFormSubmit(event)">
             <label for="no" class="label">Nomor:</label>
             <input type="number" id="no" name="no" placeholder="Masukkan Nomor" required>
 
@@ -163,38 +163,50 @@
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            var formdata = $('#myForm').serializeArray();
-            formdata.push({
-                name: 'myfile',
-                value: myfile
-            });
-            google.script.run.withSuccessHandler(success).processForm(formdata);
-        }
+        let myfile = {};
+        let file, reader = new FileReader();
 
-        function success() {
-            document.getElementById("myForm").reset();
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Data Terkirim',
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }
-
-        var myfile = {}, file, reader = new FileReader();
         reader.onloadend = function (e) {
             myfile.data = e.target.result;
             myfile.name = file.name;
             console.log(myfile);
         };
-        $('#Bukti_Kegiatan').change(function () {
-            file = $('#Bukti_Kegiatan')[0].files[0];
+
+        document.getElementById('Bukti_Kegiatan').addEventListener('change', function () {
+            file = this.files[0];
             reader.readAsDataURL(file);
         });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            let formData = $('#myForm').serializeArray();
+            formData.push({ name: 'myfile', value: myfile });
+
+            $.ajax({
+                url: 'https://script.google.com/macros/s/AKfycbykR3bAlcCV1jXcaijgbmcG7ajOyUadM0BYSmNgDw37YXVTxTLvD10PDf-gzlkbqBAr/exec', 
+                method: 'POST',
+                data: JSON.stringify(formData),
+                contentType: 'application/json',
+                success: function (response) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Data Terkirim',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    document.getElementById("myForm").reset();
+                },
+                error: function (error) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'error',
+                        title: 'Gagal Mengirim Data',
+                        showConfirmButton: true
+                    });
+                }
+            });
+        }
     </script>
 </body>
-
 </html>
